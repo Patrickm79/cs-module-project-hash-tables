@@ -22,7 +22,7 @@ class HashTable:
 
     def __init__(self, capacity):
         # Your code here
-        self._storage = [None] * capacity
+        self._storage = [None] * int(capacity)
         self.capacity = capacity
         self.count = 0
         self.should_resize = True
@@ -197,7 +197,6 @@ class HashTable:
     def resize_if_needed(self):
         if not self.should_resize:
             return
-
 
         if self.get_load_factor() > 0.7:
             self.resize(self.capacity * 2)
